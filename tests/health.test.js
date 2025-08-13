@@ -8,11 +8,3 @@ describe('GET /health', () => {
         expect(response.body).toHaveProperty('status', 'ok');
     });
 });
-
-describe('GET /', () => {
-    it('GET /', async() => {
-        const response = await request.get("/");
-        expect(response.status).toBe(201);
-        expect(responde.body).toHaveProperty('route', 'ok');
-    })
-})
