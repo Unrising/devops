@@ -1,0 +1,14 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: npm run dev
+    working_dir: /app
+    volumes:
+      - ./app:/app
+    environment:
+      - NODE_ENV=development
+      - PORT=${PORT:-3000}
+    ports:
+      - "${PORT:-3000}:${PORT:-3000}"
