@@ -4,6 +4,7 @@ WORKDIR /app
 COPY app/package.json app/package-lock.json* ./
 RUN npm ci --ignore-scripts
 COPY app/ ./
+COPY tests/ ./tests
 RUN npm test
 
 FROM node:${NODE_VERSION} as runtime
