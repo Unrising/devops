@@ -1,4 +1,4 @@
-import express from require("express");
+import express from "express";
 
 const app = express();
 
