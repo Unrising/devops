@@ -9,6 +9,7 @@ RUN npm test
 FROM node:${NODE_VERSION} as runtime
 ENV NODE_ENV=production
 WORKDIR /app
+COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/*.js ./
 EXPOSE 4000
