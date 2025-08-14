@@ -5,11 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 app.get("/health", (req,res) => {
-    res.status(200).json("status health ok");
-});
-
-app.get("/", (req,res) => {
-    res.status(201).json("route / ok");
+    res.status(200).json("ok");
 });
 
 if (process.env.NODE_END !== "test"){
