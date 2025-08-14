@@ -1,10 +1,12 @@
-import request from "supertest";
-import app from "../server.js";
+import { describe, it } from 'node:test';
+import assert from 'node:assert';
+import request from 'supertest';
+import app from '../server.js';
 
 describe('GET /health', () => {
-    it('GET /health', async() => {
-        const response = await request(app).get("/health");
-        expect(response.status).toBe(200);
-        expect(response.body).toHaveProperty('status', 'ok');
-    });
+  it('should return status ok', async () => {
+    const response = await request(app).get('/health');
+    assert.strictEqual(response.status, 200);
+    assert.deepStrictEqual(response.body, { status: 'ok' });
+  });
 });
